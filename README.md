@@ -10,7 +10,10 @@ An immersive, cinematic, anime-inspired Shinobi Command Center built with React 
 
 ## ⚡ Live Deployment
 
-🔗 **Live Website:** [SHINOBI OS on Netlify](https://shinobi-os.netlify.app) *(or deployed platform URL)*
+🔗 **Live Website:** [https://rainbow-horse-c6b64d.netlify.app](https://rainbow-horse-c6b64d.netlify.app)
+*(Visitor Access Code: `My-Drop-Site` — can be claimed permanently to your Netlify account)*
+
+🔗 **GitHub Repository:** [https://github.com/divyalgoli43-commits/shinobi-os](https://github.com/divyalgoli43-commits/shinobi-os)
 
 ---
 
@@ -67,7 +70,7 @@ An immersive, cinematic, anime-inspired Shinobi Command Center built with React 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/shinobi-os.git
+   git clone https://github.com/divyalgoli43-commits/shinobi-os.git
    cd shinobi-os
    ```
 
