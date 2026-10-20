@@ -1,0 +1,160 @@
+:root {
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Cinzel', Georgia, serif;
+  --font-display: 'Rajdhani', 'Inter', sans-serif;
+
+  /* Theme Backgrounds */
+  --bg-void: #05070c;
+  --bg-deep: #080c16;
+  --bg-panel: #0d1322;
+  --bg-panel-elevated: #131a2e;
+  --bg-panel-hover: #18223d;
+  --bg-glass: rgba(13, 19, 34, 0.88);
+
+  /* Crimson Accent (Primary Shinobi) */
+  --crimson: #e11d48;
+  --crimson-glow: rgba(225, 29, 72, 0.35);
+  --crimson-dark: #881337;
+  --crimson-light: #fb7185;
+
+  /* Electric Blue (Chakra & Lightning) */
+  --chakra-blue: #38bdf8;
+  --chakra-glow: rgba(56, 189, 248, 0.35);
+  --chakra-dark: #0284c7;
+
+  /* Sage Gold (Fire & Sun) */
+  --sage-gold: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.3);
+  --gold-dark: #b45309;
+
+  /* Amaterasu Violet */
+  --amaterasu-violet: #a855f7;
+  --violet-glow: rgba(168, 85, 247, 0.3);
+
+  /* Leaf Emerald */
+  --leaf-green: #10b981;
+  --green-glow: rgba(16, 185, 129, 0.3);
+
+  /* Neutrals & Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-crimson: rgba(225, 29, 72, 0.28);
+  --border-chakra: rgba(56, 189, 248, 0.28);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.8);
+  --shadow-crimson: 0 0 20px -3px rgba(225, 29, 72, 0.45);
+  --shadow-blue: 0 0 20px -3px rgba(56, 189, 248, 0.45);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Legacy aliases for backward compatibility */
+  --bg: var(--bg-void);
+  --panel: var(--bg-panel);
+  --panel-light: var(--bg-panel-elevated);
+  --border: var(--border-subtle);
+  --muted: var(--text-secondary);
+  --red: var(--crimson);
+  --red-light: var(--crimson-light);
+  --gold: var(--sage-gold);
+
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-void);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--bg-void);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+::selection {
+  background: var(--crimson);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar for tactical dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060910;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+  border-color: var(--crimson-glow);
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid var(--chakra-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
