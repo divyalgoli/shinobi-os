@@ -12,6 +12,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.netlify/
 
 # Backups and historical checkpoints
 _backup*
