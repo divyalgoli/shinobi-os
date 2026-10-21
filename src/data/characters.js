@@ -11,6 +11,7 @@ import ancestorsAndOtsutsuki from "./characters/ancestorsAndOtsutsuki.js";
 import minorVillagesAndSamurai from "./characters/minorVillagesAndSamurai.js";
 import tailedBeastsAndSpirits from "./characters/tailedBeastsAndSpirits.js";
 import characterImages from "./characterImages.js";
+import { resolveAssetUrl } from "../utils/assetUrl.js";
 
 // Combine and sort characters by unique ID
 const allCharacters = [
@@ -30,10 +31,10 @@ const allCharacters = [
 const characterMap = new Map();
 for (const char of allCharacters) {
   if (!characterMap.has(char.id)) {
-    const resolvedImage = characterImages[char.id] !== undefined ? characterImages[char.id] : (char.image ?? null);
+    const rawImage = characterImages[char.id] !== undefined ? characterImages[char.id] : (char.image ?? null);
     characterMap.set(char.id, {
       ...char,
-      image: resolvedImage
+      image: resolveAssetUrl(rawImage)
     });
   }
 }

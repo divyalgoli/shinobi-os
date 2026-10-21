@@ -6,6 +6,7 @@ import jutsu from "./data/jutsu";
 import missions from "./data/missions";
 import { getMissionChallenges, getMissionPassCriteria } from "./data/missionChallenges";
 import { nations, villages, clans, organizations, locations, history } from "./data/worldLore";
+import { resolveAssetUrl } from "./utils/assetUrl";
 import "./App.css";
 
 function getShinobiRankTitle(xp) {
@@ -1099,14 +1100,15 @@ function App() {
   function CharacterCard({ character }) {
     const [imgFailed, setImgFailed] = useState(false);
     const initial = character.name ? character.name.charAt(0) : "忍";
+    const resolvedImg = resolveAssetUrl(character.image);
 
     return (
       <article className="character-card">
         <div className="character-image-wrap">
-          {character.image && !imgFailed ? (
+          {resolvedImg && !imgFailed ? (
             <img
               className="character-image"
-              src={character.image}
+              src={resolvedImg}
               alt={character.name}
               loading="lazy"
               onError={() => setImgFailed(true)}
@@ -1156,8 +1158,9 @@ function App() {
 
   function ProfileAvatar({ character }) {
     const [failed, setFailed] = useState(false);
+    const resolvedImg = resolveAssetUrl(character.image);
 
-    if (!character.image || failed) {
+    if (!resolvedImg || failed) {
       return (
         <div className="profile-placeholder-avatar">
           <span className="placeholder-kanji-lg">忍</span>
@@ -1174,7 +1177,7 @@ function App() {
     return (
       <img
         className="profile-image"
-        src={character.image}
+        src={resolvedImg}
         alt={character.name}
         onError={() => setFailed(true)}
       />
