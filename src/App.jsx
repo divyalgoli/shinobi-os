@@ -6,7 +6,7 @@ import jutsu from "./data/jutsu";
 import missions from "./data/missions";
 import { getMissionChallenges, getMissionPassCriteria } from "./data/missionChallenges";
 import { nations, villages, clans, organizations, locations, history } from "./data/worldLore";
-import { resolveAssetUrl } from "./utils/assetUrl";
+
 import "./App.css";
 
 function getShinobiRankTitle(xp) {
@@ -1100,7 +1100,7 @@ function App() {
   function CharacterCard({ character }) {
     const [imgFailed, setImgFailed] = useState(false);
     const initial = character.name ? character.name.charAt(0) : "忍";
-    const resolvedImg = resolveAssetUrl(character.image);
+    const resolvedImg = character.image;
 
     return (
       <article className="character-card">
@@ -1158,7 +1158,7 @@ function App() {
 
   function ProfileAvatar({ character }) {
     const [failed, setFailed] = useState(false);
-    const resolvedImg = resolveAssetUrl(character.image);
+    const resolvedImg = character.image;
 
     if (!resolvedImg || failed) {
       return (
